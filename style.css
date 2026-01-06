@@ -1,0 +1,211 @@
+:root {
+  --bg: #0e0e0e;
+  --text: #ffffff;
+  --card: #1a1a1a;
+  --nav: rgba(0,0,0,0.75);
+  --accent: #d10000;
+}
+
+body.light {
+  --bg: #f4f4f4;
+  --text: #111;
+  --card: #ffffff;
+  --nav: #ffffff;
+  --accent: #d10000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== NAV ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: var(--nav);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.nav-right {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-btn {
+  background: var(--accent);
+  padding: 6px 14px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  background: url("img/hintergrund_startseite.png") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.2)
+  );
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  width: 100%;
+}
+
+.hero-left {
+  max-width: 600px;
+}
+
+.hero-left h1 {
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.btn-main {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-discord {
+  background: #7289DA;
+  color: #fff;
+}
+
+.btn-discord:hover {
+  background: #5b6eae;
+}
+
+/* ===== CONTENT ===== */
+main {
+  padding-top: 70px;
+}
+
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.box {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 8px;
+  color: #aaa;
+}
+
+/* ===== THEME BUTTON ===== */
+.theme-btn {
+  background: none;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ===== ANIMATION ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-left h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
