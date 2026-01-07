@@ -1,3 +1,4 @@
+/* ===== VARIABLEN / THEME ===== */
 :root {
   --bg: #0e0e0e;
   --text: #ffffff;
@@ -14,6 +15,7 @@ body.light {
   --accent: #d10000;
 }
 
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -43,20 +45,18 @@ body {
 
 .nav-left {
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
-.logo {
-  font-weight: 800;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
+/* LOGO IM HEADER */
+.nav-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
 }
 
-.tagline {
-  font-size: 0.75rem;
-  opacity: 0.7;
-}
-
+/* NAV RIGHT */
 .nav-right {
   list-style: none;
   display: flex;
@@ -140,6 +140,10 @@ body {
   color: #fff;
 }
 
+.btn-main:hover {
+  background: #b50000;
+}
+
 .btn-discord {
   background: #7289DA;
   color: #fff;
@@ -149,7 +153,7 @@ body {
   background: #5b6eae;
 }
 
-/* ===== CONTENT ===== */
+/* ===== CONTENT / SECTIONS ===== */
 main {
   padding-top: 70px;
 }
@@ -208,4 +212,108 @@ h2 {
     flex-direction: column;
     gap: 12px;
   }
+
+  .nav-logo {
+    height: 34px;
+  }
 }
+
+/* ===== APPLY PAGE ===== */
+.apply-wrapper {
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.apply-form {
+  background: var(--bg-alt);
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.apply-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.form-info {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--text-muted);
+}
+
+/* ===== GOOGLE FORM ===== */
+.google-form-wrapper iframe {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ===== ANIMATION ===== */
+.fade-in {
+  animation: fade 0.6s ease forwards;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-content h1 { font-size: 42px; }
+
+  .hero-left {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ===== APPLY / GOOGLE FORM ===== */
+.apply-form {
+  background: #2a2a2a; /* Card leicht dunkler, für besseren Kontrast */
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  color: var(--text);
+}
+
+/* Im Light Mode bleibt die Card normal */
+body.light .apply-form {
+  background: var(--card);
+}
+
+/* Wrapper für Google Form iframe */
+.google-form-wrapper {
+  width: 100%;
+  max-height: 700px;   /* scrollbar falls Formular zu groß */
+  overflow: auto;
+  border-radius: 8px;
+  background: #f4f4f4; /* heller Hintergrund für iframe, damit Dark Mode nicht zu krass */
+  padding: 10px;       /* optional Abstand zum Rand */
+}
+
+/* iframe selbst bleibt unverändert */
+.google-form-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+

@@ -33,3 +33,9 @@ if (toggle) {
     }
   });
 }
+
+// ===== FORM SUBMIT (DEMO) =====
+function submitForm() {
+  alert("Danke für deine Bewerbung! Wir melden uns bald bei dir.");
+  return false;
+}
