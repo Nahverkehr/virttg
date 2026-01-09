@@ -18,37 +18,53 @@
       <div class="hero-left">
         <h1>Virtual Trucking Germany</h1>
         <p class="hero-sub">Lebe dein Truckerleben – bewirb dich noch heute!</p>
-        <div class="hero-actions">
-          <a href="apply.html" class="btn btn-main">Bewerben</a>
-          <a href="https://discord.gg/SePmmzqu42" target="_blank" class="btn btn-discord">Discord beitreten</a>
-          <a href="https://truckersmp.com/vtc/43680" target="_blank" class="btn btn-vtc">Unsere VTC-Seite</a>
-        </div>
+        <div class="hero-actions" id="hero-buttons"></div>
       </div>
     </div>
   </section>
 
   <main>
-    <section>
-      <h2>News</h2>
-      <div class="box">
-        <p>Hier erscheinen die aktuellen News der Spedition.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Galerie</h2>
-      <div class="box">
-        <p>Hier können Bilder aus dem Speditionsalltag gezeigt werden.</p>
-      </div>
-    </section>
+    <!-- Sections wie vorher… News, Galerie, Über uns, Flotte, Events -->
   </main>
 
-  <!-- HEADER LADEN -->
+  <!-- BUTTONS UND HEADER DYNAMISCH LADEN -->
+  <script src="buttons.js"></script>
   <script>
+    // HEADER laden
     fetch('header.html')
-      .then(response => response.text())
+      .then(res => res.text())
       .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
+
+        // Buttons im Header erzeugen
+        const headerContainer = document.getElementById("header-buttons");
+        buttons.forEach(btn => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = btn.url;
+          a.textContent = btn.text;
+          a.classList.add("nav-btn");
+          if(btn.type === "main") a.classList.add("btn-main");
+          if(btn.type === "discord") a.classList.add("btn-discord");
+          if(btn.type === "vtc") a.classList.add("btn-vtc");
+          if(btn.target) a.target = btn.target;
+          li.appendChild(a);
+          headerContainer.appendChild(li);
+        });
+
+        // Buttons im Hero erzeugen
+        const heroContainer = document.getElementById("hero-buttons");
+        buttons.forEach(btn => {
+          const a = document.createElement("a");
+          a.href = btn.url;
+          a.textContent = btn.text;
+          a.classList.add("btn");
+          if(btn.type === "main") a.classList.add("btn-main");
+          if(btn.type === "discord") a.classList.add("btn-discord");
+          if(btn.type === "vtc") a.classList.add("btn-vtc");
+          if(btn.target) a.target = btn.target;
+          heroContainer.appendChild(a);
+        });
       });
   </script>
 

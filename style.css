@@ -72,10 +72,11 @@ body {
 }
 
 .nav-btn {
-  background: var(--accent);
   padding: 6px 14px;
   border-radius: 4px;
   color: #fff;
+  font-weight: 600;
+  position: relative;
 }
 
 /* ===== HERO ===== */
@@ -98,7 +99,7 @@ body {
     rgba(0,0,0,0.4),
     rgba(0,0,0,0.2)
   );
-  z-index: 0; /* Unter den Buttons */
+  z-index: 0; /* Unter Buttons */
 }
 
 .hero-inner {
@@ -113,7 +114,7 @@ body {
 .hero-left {
   max-width: 600px;
   position: relative;
-  z-index: 1; /* sicherstellen */
+  z-index: 1;
 }
 
 .hero-left h1 {
@@ -144,30 +145,34 @@ body {
   transition: all 0.2s ease;
 }
 
+/* Bewerben Button */
 .btn-main {
   background: var(--accent);
   color: #fff;
+  font-weight: 700;
 }
-
 .btn-main:hover {
   background: #b50000;
 }
 
+/* Discord Button */
 .btn-discord {
   background: #7289DA;
   color: #fff;
 }
-
 .btn-discord:hover {
   background: #5b6eae;
 }
 
+/* VTC-Seite Button (aufmerksamkeitsstark) */
 .btn-vtc {
-  background: linear-gradient(135deg, #ff3b3b, #b50000);
+  background: linear-gradient(135deg, #ff9500, #ff4500);
   color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(255,149,0,0.7), 0 0 20px rgba(255,69,0,0.5);
 }
 
-/* GLOW / PULS */
+/* Glanz / Glow Effekt auf alle Buttons */
 .btn-main::after,
 .btn-discord::after,
 .btn-vtc::after {
@@ -183,19 +188,17 @@ body {
 .btn-main:hover::after {
   opacity: 1;
   transform: scale(1.05);
-  border-color: rgba(209, 0, 0, 0.6);
+  border-color: rgba(209,0,0,0.6);
 }
-
 .btn-discord:hover::after {
   opacity: 1;
   transform: scale(1.05);
-  border-color: rgba(114, 137, 218, 0.6);
+  border-color: rgba(114,137,218,0.6);
 }
-
 .btn-vtc:hover::after {
   opacity: 1;
   transform: scale(1.05);
-  border-color: rgba(209, 0, 0, 0.6);
+  border-color: rgba(255,149,0,0.8);
 }
 
 /* ===== CONTENT / SECTIONS ===== */

@@ -25,10 +25,10 @@
     </form>
   </div>
 
-  <!-- HEADER LADEN -->
+  <!-- HEADER laden -->
   <script>
     fetch('header.html')
-      .then(response => response.text())
+      .then(res => res.text())
       .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
       });
