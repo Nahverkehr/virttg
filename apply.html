@@ -2,70 +2,37 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Bewerbung – Virtual Trucking Germany</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bewerbung - Virtual Trucking Germany</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
 
-<!-- HEADER: IDENTISCH ZUR INDEX-SEITE -->
-<header class="nav">
-  <div class="nav-left">
-    <img src="img/logo.png" alt="VTG Logo" class="nav-logo">
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+
+  <!-- APPLY FORM -->
+  <div class="apply-wrapper">
+    <form class="apply-form">
+      <h2>Bewerbung</h2>
+      <p class="form-info">Fülle das Formular aus und sende uns deine Bewerbung direkt über Google Forms.</p>
+      <div class="google-form-wrapper">
+        <iframe src="https://docs.google.com/forms/d/e/DEIN_FORMULAR_LINK/viewform?embedded=true" 
+                width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
+          Laden…
+        </iframe>
+      </div>
+    </form>
   </div>
-  <ul class="nav-right">
-    <li><a href="index.html">Start</a></li>
-    <li><a href="apply.html">Bewerbung</a></li>
-  </ul>
-  <button id="themeToggle" class="theme-btn">🌙</button>
-</header>
 
-<!-- MAIN CONTENT -->
-<main class="apply-wrapper">
-  <div class="apply-form fade-in">
-
-    <h2>Bewerbungsformular</h2>
-    <p class="form-info">
-      Fülle das Formular aus, um dich bei Virtual Trucking Germany zu bewerben.
-    </p>
-
-    <!-- GOOGLE FORM EMBED TEST (scrollbar) -->
-    <div class="google-form-wrapper">
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLScu1AC-7g_WBaN_WWqwARWHdhXL6G5sKl8K4Qn_ufIkkdWDeA/viewform?embedded=true" 
-        width="100%" 
-        height="700" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0">
-        Wird geladen…
-      </iframe>
-    </div>
-
-  </div>
-</main>
-
-<!-- THEME TOGGLE SCRIPT -->
-<script>
-const toggle = document.getElementById("themeToggle");
-const body = document.body;
-
-// Theme aus LocalStorage laden
-if (localStorage.getItem("theme") === "light") {
-  body.classList.add("light");
-  toggle.textContent = "🌞";
-}
-
-toggle.addEventListener("click", () => {
-  body.classList.toggle("light");
-  if (body.classList.contains("light")) {
-    localStorage.setItem("theme", "light");
-    toggle.textContent = "🌞";
-  } else {
-    localStorage.setItem("theme", "dark");
-    toggle.textContent = "🌙";
-  }
-});
-</script>
+  <!-- HEADER LADEN -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+  </script>
 
 </body>
 </html>

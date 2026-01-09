@@ -2,61 +2,55 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Virtual Trucking Germany</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Trucking Germany</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
 
-<!-- NAVIGATION -->
-<nav class="nav">
-  <div class="nav-left">
-    <!-- LOGO BILD -->
-    <img src="img/logo.png" alt="Virtual Trucking Germany Logo" class="nav-logo">
-  </div>
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
 
-  <ul class="nav-right">
-    <li><a href="#news">News</a></li>
-    <li><a href="#gallery">Galerie</a></li>
-    <li><a href="apply.html" class="nav-btn">Bewerben</a></li>
-    <li><button id="themeToggle" class="theme-btn">🌙</button></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="overlay"></div>
-
-  <div class="hero-inner">
-    <div class="hero-left">
-      <h1>Virtual Trucking Germany</h1>
-      <p class="hero-sub">
-        Deine virtuelle Spedition für Freiheit, Konvois & Community
-      </p>
-
-      <div class="hero-actions">
-        <a href="apply.html" class="btn btn-main">Jetzt bewerben</a>
-        <a href="https://discord.gg/deinserver" class="btn btn-discord" target="_blank">
-          Trete unserem Discord bei
-        </a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1>Virtual Trucking Germany</h1>
+        <p class="hero-sub">Lebe dein Truckerleben – bewirb dich noch heute!</p>
+        <div class="hero-actions">
+          <a href="apply.html" class="btn btn-main">Bewerben</a>
+          <a href="https://discord.gg/deinlink" target="_blank" class="btn btn-discord">Discord beitreten</a>
+          <a href="https://deine-vtc-seite.de" target="_blank" class="btn btn-vtc">Unsere VTC-Seite</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-
-<!-- CONTENT -->
-<main>
-  <section id="news" class="fade-in">
-    <h2>News</h2>
-    <div class="box">Hier erscheinen später die News.</div>
   </section>
 
-  <section id="gallery" class="fade-in">
-    <h2>Galerie</h2>
-    <div class="box">Hier erscheinen später Bilder aus dem Speditionsalltag.</div>
-  </section>
-</main>
+  <main>
+    <section>
+      <h2>News</h2>
+      <div class="box">
+        <p>Hier erscheinen die aktuellen News der Spedition.</p>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <section>
+      <h2>Galerie</h2>
+      <div class="box">
+        <p>Hier können Bilder aus dem Speditionsalltag gezeigt werden.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- HEADER LADEN -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+  </script>
+
 </body>
 </html>
