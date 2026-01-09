@@ -246,14 +246,22 @@ body.light .apply-form {
   background: var(--card);
 }
 
+/* ===== GOOGLE FORM – FIXED EMBED ===== */
 .google-form-wrapper {
   width: 100%;
-  max-height: 700px;
-  overflow: auto;
+  background: #f4f4f4;   /* hell, damit Google Form im Darkmode lesbar bleibt */
+  padding: 12px;
+  margin: 25px auto;
   border-radius: 8px;
-  background: #f4f4f4;
-  padding: 10px;
+  overflow: hidden;
 }
+
+.google-form {
+  width: 100%;
+  min-height: 1400px;   /* <- HIER ist der Fix */
+  border: none;
+}
+
 
 .google-form-wrapper iframe {
   width: 100%;
