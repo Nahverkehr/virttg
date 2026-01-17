@@ -279,3 +279,31 @@ body.light .apply-form {
   .hero { flex-direction: column; }
   .hero-actions { align-items: center; }
 }
+
+
+/* ===== RESPONSIVE HEADER ===== */
+@media (max-width: 900px) {
+  .nav {
+    padding: 0 20px;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .nav-left {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 10px;
+  }
+
+  .nav-logo {
+    height: 36px;
+  }
+}
